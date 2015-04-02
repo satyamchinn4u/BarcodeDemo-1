@@ -58,7 +58,12 @@ var app = {
 
         scanner.scan( function (result) { 
 
-            alert("We got a barcode\n" + 
+        	//$.getJSON(serviceURL + 'checkcoupons.php?id='+id+'&&cid=460', displayEmployee);
+//});
+		   //if(displayEmployee=="1")
+		   //{
+		  // alert('');
+		    alert("We got a barcode\n" + 
             "Result: " + result.text + "\n" + 
             "Format: " + result.format + "\n" + 
             "Cancelled: " + result.cancelled);  
@@ -78,18 +83,6 @@ var app = {
         }, function (error) { 
             console.log("Scanning failed: ", error); 
         } );
-    },
-
-    encode: function() {
-        var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-
-        scanner.encode(scanner.Encode.TEXT_TYPE, "http://www.nhl.com", function(success) {
-            alert("encode success: " + success);
-          }, function(fail) {
-            alert("encoding failed: " + fail);
-          }
-        );
-
     }
 
 };
